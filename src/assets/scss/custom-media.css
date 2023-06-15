@@ -1,0 +1,11 @@
+@custom-media --laptop (max-width: 1368px);
+@custom-media --tablet (max-width: 1024px);
+@custom-media --mobile (max-width: 992px);
+@custom-media --small (max-width: 768px);
+
+:root {
+  --breakpoint-small: 768px;
+  --breakpoint-mobile: 992px;
+  --breakpoint-tablet: 1024px;
+  --breakpoint-laptop: 1368px;
+}

@@ -1,0 +1,6 @@
+.gradient-text {
+  background: var(--gradient-text);
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

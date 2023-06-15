@@ -1,0 +1,68 @@
+html,
+body {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  // overflow: auto;
+  // Fix Chrome's insanely stupid font rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: unset;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+p {
+  line-height: 140%;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  // ? Disabled for now, We'll see if this ends up being an issue
+  // vertical-align: middle;
+  max-width: 100%;
+  user-select: none;
+}
+
+a,
+address {
+  font-style: normal;
+  text-decoration: none;
+}
+
+:focus {
+  outline: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
