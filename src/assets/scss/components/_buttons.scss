@@ -1,0 +1,132 @@
+.button {
+  --button-gap: var(--spacer-2);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacer-4) var(--spacer-8);
+  font-family: var(--font-family-header);
+  font-size: var(--font-size-button); // TODO: correct this to final variable, should be 16px
+  font-weight: var(--font-weight-bold);
+  line-height: 100%;
+  color: var(--color-white);
+  cursor: pointer;
+  background-color: var(--color-black);
+  border: none;
+  border-radius: var(--border-radius-pill);
+  transition: var(--transition-fast);
+  @include inset-border(var(--size-xs), var(--color-black));
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    color: var(--color-black);
+    background-color: var(--color-white);
+  }
+
+  &:active {
+    scale: .95;
+  }
+
+  &--outline {
+    color: var(--color-black);
+    background-color: transparent;
+    @include inset-border(var(--size-xs), var(--color-black));
+
+    &:hover {
+      @include inset-border(var(--size-xs), var(--button-contrast-background, var(--color-black)));
+      color: var(--button-contrast, var(--color-white));
+      background-color: var(--button-contrast-background, var(--color-black));
+    }
+
+    &-light {
+      color: var(--color-white);
+      background-color: transparent;
+      @include inset-border(var(--size-xs), var(--color-white));
+
+      &:hover {
+        @include inset-border(var(--size-xs), var(--button-contrast-background, var(--color-white)));
+        color: var(--button-contrast, var(--color-black));
+        background-color: var(--button-contrast-background, var(--color-white));
+      }
+    }
+  }
+}
+
+.button-arrow {
+  @extend .button;
+  place-items: center;
+  width: auto;
+  height: fit-content;
+  aspect-ratio: 1/1;
+  padding: var(--spacer-4);
+  font-size: var(--size-3);
+  color: var(--color-black);
+  background-color: transparent;
+  border-radius: 50%;
+  transform-origin: center;
+  @include inset-border(var(--size-xs), var(--color-black));
+
+  :where(svg) {
+    width: var(--size-2);
+    height: auto;
+  }
+
+  &:hover {
+    color: var(--color-white);
+    background-color: var(--color-black);
+  }
+
+  &:active {
+    scale: .95;
+  }
+
+  &--light {
+    color: var(--color-white);
+    @include inset-border(var(--size-xs), var(--color-white));
+
+    &:hover {
+      color: var(--color-black);
+      background-color: var(--color-white);
+    }
+  }
+
+  &--pink {
+    color: var(--color-pink);
+    @include inset-border(var(--size-xs), var(--color-pink));
+
+    &:hover {
+      color: var(--color-white);
+      background-color: var(--color-pink);
+      /* stylelint-disable-next-line property-no-vendor-prefix */
+      // -webkit-background-clip: text;
+      // background-clip: text;
+    }
+  }
+
+  &--right {
+    transform: rotate(90deg);
+  }
+
+  &--down {
+    transform: rotate(180deg);
+  }
+
+  &--left {
+    transform: rotate(270deg);
+  }
+}
+
+[inert] {
+  input,
+  textarea {
+    opacity: .5 !important;
+  }
+}

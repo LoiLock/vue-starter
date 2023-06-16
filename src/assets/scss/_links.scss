@@ -1,0 +1,48 @@
+.link {
+  $self: &;
+
+  display: inline-flex;
+  gap: var(--spacer-1);
+  align-items: center;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-bold);
+  line-height: 100%;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: var(--transition-fast);
+
+  &.active,
+  &:hover {
+    color: var(--color-pink);
+  }
+
+  &:active {
+    color: var(--color-pink);
+  }
+
+  &:disabled,
+  &--disabled {
+    cursor: not-allowed;
+    user-select: none;
+    opacity: var(--opacity-muted);
+
+    &.active,
+    &:active,
+    &:hover {
+      color: var(--color-gray);
+    }
+  }
+
+  &--muted {
+    font-weight: var(--font-weight-normal);
+    color: var(--color-light-gray);
+  }
+
+  &--brand {
+    transition: unset;
+
+    &:hover {
+      @extend .gradient-text;
+    }
+  }
+}

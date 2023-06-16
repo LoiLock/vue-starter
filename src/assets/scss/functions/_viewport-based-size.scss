@@ -1,8 +1,0 @@
-@use 'sass:math';
-
-
-@function get-vw-size($desired_px_size) {
-  $vw-size: math.div(100, $design-size) * $desired_px_size;
-
-  @return #{$vw-size}vw;
-}

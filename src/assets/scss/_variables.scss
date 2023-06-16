@@ -1,0 +1,133 @@
+// Base declarations
+@use 'sass:math';
+
+$font-weight-thin: 100;
+$font-weight-extra-light: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-regular: 400;
+$font-weight-text: 450;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+$font-weight-black: 900;
+
+$font-weights: (
+  'thin': $font-weight-thin,
+  'extra-light': $font-weight-extra-light,
+  'light': $font-weight-light,
+  'normal': $font-weight-normal,
+  'text': $font-weight-text,
+  'medium': $font-weight-medium,
+  'semi-bold': $font-weight-semi-bold,
+  'bold': $font-weight-bold,
+  'extra-bold': $font-weight-extra-bold,
+  'black': $font-weight-black
+);
+
+// Transitions
+$transition-duration-fast: .1s;
+$transition-duration: .15s;
+$transition-duration-slow: $transition-duration * 2;
+$transition-duration-snail: $transition-duration-slow * 2;
+
+$transition-fast: all $transition-duration-fast ease;
+$transition-base: all $transition-duration ease;
+$transition-slow: all $transition-duration-slow ease;
+$transition-snail: all $transition-duration-snail ease;
+
+$easing-in-out-quart: cubic-bezier(.76, 0, .24, 1);
+$easing-ease-out-back: cubic-bezier(.34, 1.56, .64, 1);
+$easing-ease-out-back-reverse: cubic-bezier(1, .64, 1.56, .34);
+$transition-bounce-back: #{$transition-duration} #{$easing-ease-out-back};
+$transition-bounce-back-slow: #{$transition-duration-slow} #{$easing-ease-out-back};
+$transition-bounce-back-snail: #{$transition-duration-snail} #{$easing-ease-out-back};
+
+$sizes: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 20, 21, 22, 24, 25, 28, 35, 36, 45, 46, 50, 51, 100;
+$spacer: .25rem;
+
+// Spacers
+:root {
+  @each $size in $sizes {
+    --spacer-#{$size}: #{$size * $spacer};
+    --size-#{$size}: #{$size * $spacer};
+  }
+
+  --spacer-xs: .125rem; // 2px
+  --size-xs: .125rem; // 2px
+}
+
+:root {
+  --width-prose: 65ch;
+  --width-prose-wide: 80ch;
+}
+
+:root {
+  --transition-duration-fast: #{$transition-duration-fast};
+  --transition-duration-base: #{$transition-duration};
+  --transition-duration-slow: #{$transition-duration-slow};
+  --transition-duration-snail: #{$transition-duration-snail};
+  --transition-fast: #{$transition-fast};
+  --transition-base: #{$transition-base};
+  --transition-slow: #{$transition-slow};
+  --transition-snail: #{$transition-snail};
+  --transition-bounce-back: #{$transition-bounce-back};
+  --transition-bounce-back-slow: #{$transition-bounce-back-slow};
+  --transition-bounce-back-snail: #{$transition-bounce-back-snail};
+}
+
+// Borders
+:root {
+  --border-radius-xxs: .25rem; // 4px
+  --border-radius-xs: .3125rem; // 5px
+  --border-radius-sm: .625rem; // 10px
+  --border-radius-md: .75rem; // 12px
+  --border-radius-lg: 1rem; // 16px
+  --border-radius-xl: 1.25rem; // 20px
+  --border-radius-pill: 100rem; // Pill border-radius
+}
+
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-light-gray: #ccc;
+  --color-gray: #808080;
+  --color-pink: #f379BD;
+  --color-pink-faded: #f379bc30;
+  --color-purple-hover: hsl(256, 25%, 40%);
+  --color-purple: #352D4B;
+  --color-purple-medium: #1d1a30;
+  --color-purple-dark: #151427;
+  --gradient-brand-faded: linear-gradient(to right, rgba(240, 147, 251, .2), rgba(245, 87, 108, .2));
+  --gradient-brand: linear-gradient(to right, #f093fb, #f5576c);
+  --gradient-brand-radial: radial-gradient(#f5576c, #f093fb);
+  --gradient-text: -webkit-linear-gradient(left, #f093fb, #f5576c);
+  --gradient-text: -webkit-linear-gradient(left, #f093fb, #f5576c);
+}
+
+// Font sizes
+
+:root {
+  --font-size-xs: .5rem; // 8px
+  --font-size-1: .625rem; // 10px
+  --font-size-2: .6875rem; // 11px
+  --font-size-3: .75rem; // 12px
+  --font-size-4: .875rem; // 14px
+  --font-size-5: 1rem; // 16px - barely used
+  --font-size-6: 1.125rem; // 18px
+  --font-size-7: 1.375rem; // 22px
+  --font-size-8: 1.75rem; // 28px
+  --font-size-9: 2.75rem; // 44px
+}
+
+// Minimum sizes for some components
+:root {
+  --job-offer-item-width: 25rem;
+  // --text-input-width: 295px; // TODO: Fix this to rem
+}
+
+:root {
+  --opacity-muted: .2;
+  --opacity-muted-hover: .4;
+}

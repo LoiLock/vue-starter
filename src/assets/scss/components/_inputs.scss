@@ -1,0 +1,17 @@
+.text-input {
+  @include inset-border(var(--size-xs), var(--color-black));
+  display: inline-flex;
+  padding: var(--spacer-4) var(--spacer-6);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-form-input);
+  font-weight: var(--font-weight-extra-bold);
+  line-height: 100%;
+  resize: none;
+  background-color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius-xs);
+
+  &:focus {
+    outline: none;
+  }
+}

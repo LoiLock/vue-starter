@@ -1,0 +1,239 @@
+@font-face {
+  font-family: Kallisto;
+  font-weight: 700;
+  src: url('~/assets/fonts/kallisto/Kallisto-Bold.woff2') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Kallisto;
+  font-weight: 500;
+  src: url('~/assets/fonts/kallisto/Kallisto-Medium.woff2') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Avenir;
+  font-weight: 800;
+  src: url('~/assets/fonts/avenir/Avenir-Black.woff2') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Avenir;
+  font-weight: 400;
+  src: url('~/assets/fonts/avenir/Avenir-Roman.woff2') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Avenir;
+  font-weight: 300;
+  src: url('~/assets/fonts/avenir/Avenir-Book.woff2') format('woff');
+  font-display: swap;
+}
+
+:root {
+  // --font-family-monospace: #{$font-family-monospace}, #{$font-family-monospace-fallback};
+  --font-family-header: 'Kallisto';
+  --font-family-body: 'Avenir';
+  --latest-news-item-content-min-height: 158px;
+
+  @each $name, $font-weight in $font-weights {
+    --font-weight-#{$name}: #{$font-weight};
+  }
+}
+
+html,
+body,
+#__nuxt {
+  min-height: 100vh;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+kbd,
+samp {
+  font-family: var(--font-family-sans-serif);
+  font-size: inherit;
+}
+
+.main-wrapper {
+  flex: 1 1 auto;
+}
+
+body {
+  font-family: var(--font-family-body);
+
+  ::selection {
+    color: var(--color-pink);
+    background-color: var(--color-pink-faded);
+  }
+}
+
+#__nuxt {
+  display: flex;
+  flex-direction: column;
+}
+.label {
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-extra-bold);
+  color: var(--color-black);
+  user-select: none;
+
+  &--light {
+    color: var(--color-white);
+  }
+}
+
+.tag-label {
+  padding: var(--spacer-xs) var(--spacer-1);
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-medium);
+  line-height: 100%;
+
+  &--large {
+    padding: var(--spacer-1) var(--spacer-2);
+    font-size: var(--font-size-4);
+  }
+
+  &--extra-large {
+    padding: var(--spacer-1) var(--spacer-2);
+    font-size: var(--font-size-5);
+    font-weight: var(--font-weight-bold);
+  }
+
+  // @each $name, $color in $color-map {
+  //   &--#{$name} {
+  //     color: var(--color-#{$name}-500);
+  //     background-color: var(--color-#{$name}-100);
+  //     border-radius: var(--border-radius-3);
+  //   }
+  // }
+}
+
+// Experimental
+.header {
+  font-family: var(--font-family-header);
+  font-weight: var(--font-weight-bold);
+  line-height: 100%;
+  color: var(--color-black);
+
+  &--light {
+    color: var(--color-white);
+  }
+
+  &--hero {
+    font-size: var(--font-size-heading-hero);
+  }
+
+  &--1 {
+    font-size: var(--font-size-heading-1);
+  }
+
+  &--2 {
+    font-size: var(--font-size-heading-2);
+  }
+
+  &--3 {
+    font-size: var(--font-size-heading-3);
+  }
+
+  &--4 {
+    font-size: var(--font-size-heading-4);
+  }
+
+  &--subheader {
+    font-size: var(--font-size-subheader);
+    font-weight: var(--font-weight-light);
+  }
+
+  // &--2xl {
+  //   font-size: var(--font-size-8);
+  // }
+}
+
+
+.rich-content {
+  h1 {
+    @extend .header;
+    @extend .header--1;
+  };
+  h2 {
+    @extend .header;
+    @extend .header--2;
+  };
+  h3 {
+    @extend .header;
+    @extend .header--3;
+  };
+  h4 {
+    @extend .header;
+    @extend .header--4;
+  };
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  ul {
+    font-family: var(--font-family-body);
+  }
+
+  p,
+  ul {
+    margin-bottom: var(--spacer-3);
+    font-size: var(--font-size-body-small);
+    font-weight: var(--font-weight-light);
+    line-height: 140%;
+  }
+
+  strong {
+    font-weight: var(--font-weight-semi-bold);
+  }
+
+  ul {
+    padding-left: var(--spacer-8);
+
+    li {
+      &::marker {
+        font-size: var(--size-8);
+        line-height: 100%;
+        color: var(--color-pink);
+      }
+    }
+  }
+  // h5 {
+  //   @extend .header;
+  //   @extend .header--5;
+  // };
+  // h6 {
+  //   @extend .header;
+  //   @extend .header--6;
+  // };
+}
+
+hr {
+  margin: 0;
+  border-top: 1px solid var(--color-grayscale-200);
+  opacity: 1;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.gradient-text {
+  background: var(--gradient-text);
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

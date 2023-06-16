@@ -1,0 +1,26 @@
+.page-frame {
+  width: 100vw;
+  min-height: 100vh;
+  padding: var(--spacer-35) var(--spacer-25);
+  overflow-x: hidden;
+}
+
+.page {
+  flex: 1 0 auto;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  padding: var(--spacer-25) var(--spacer-8);
+  overflow-x: hidden;
+}
+
+.width {
+  &-prose {
+    width: min(100%, var(--width-prose));
+  }
+
+  &-prose-wide {
+    width: min(100%, var(--width-prose-wide));
+  }
+}
