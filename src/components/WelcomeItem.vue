@@ -1,18 +1,30 @@
 <template>
   <div class="item">
     <i>
-      <slot name="icon" />
+      <slot name="icon" /> {{ countStore.count }}
     </i>
 
     <div class="details">
       <h3>
         <slot name="heading" />
+
+        <button @click="countStore.count++">
+          {{ countStore.count }}
+        </button>
       </h3>
 
       <slot />
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { ref } from 'vue';
+
+import { useCounterStore } from '@/stores/counter';
+
+const countStore = useCounterStore();
+</script>
 
 <style lang="scss" scoped>
 .item {

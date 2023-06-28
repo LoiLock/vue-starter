@@ -13,7 +13,10 @@
       href="https://vuejs.org/"
       rel="noopener"
       target="_blank"
-    >official documentation</a>
+    >
+      official documentation
+    </a>
+
     provides you with all information you need to get started.
   </WelcomeItem>
 

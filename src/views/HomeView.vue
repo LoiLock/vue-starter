@@ -1,10 +1,11 @@
 <template>
   <main>
-    <TheWelcome />
+    <SimpleForm />
   </main>
 </template>
 
 <script setup lang="ts">
+import SimpleForm from '@/components/SimpleForm.vue';
 import TheWelcome from '@/components/TheWelcome.vue';
 </script>
 

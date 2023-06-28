@@ -19,9 +19,11 @@ export default defineConfig({
     },
   },
 
-  css: {
-    preprocessorOptions: {
-      scss: { additionalData: `@import "${pathSrc}/assets/scss/app.scss";` },
-    },
-  },
+  // css: {
+  //   preprocessorOptions: {
+  //     scss: {
+  //       additionalData: '@import "@/assets/scss/app.scss";',
+  //     },
+  //   },
+  // },
 });
